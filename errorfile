@@ -1,0 +1,229 @@
+
+Ruby intro part 1
+  #sum
+    is defined
+    returns correct sum [20 points]
+    works on the empty array [10 points]
+  #max_2_sum
+    is defined
+    returns the correct sum [7 points]
+    works even if 2 largest values are the same [3 points]
+    returns zero if array is empty [10 points]
+    returns value of the element if just one element [10 points]
+  #sum_to_n
+    is defined (FAILED - 1)
+    returns true when any two elements sum to the second argument [30 points] (FAILED - 2)
+    returns false for any single element array [5 points] (FAILED - 3)
+    returns false for an empty array [5 points]
+
+#hello
+  is defined
+  The hello method returns the correct string [30 points] (FAILED - 4)
+
+#starts_with_consonant?
+  is defined
+  classifies true cases [10 points]
+  classifies false cases [10 points]
+  works on the empty string [5 points]
+  works on nonletters [5 points] (FAILED - 5)
+
+#binary_multiple_of_4?
+  is defined (FAILED - 6)
+  classifies valid binary numbers [30 points] (FAILED - 7)
+  rejects invalid binary numbers [10 points] (FAILED - 8)
+
+BookInStock
+  is defined
+  getters and setters
+    sets ISBN [10 points] (FAILED - 9)
+    sets price [10 points] (FAILED - 10)
+    is able to change ISBN [10 points] (FAILED - 11)
+    is able to change price [10 points] (FAILED - 12)
+  constructor
+    rejects invalid ISBN number [10 points] (FAILED - 13)
+    rejects zero price [10 points] (FAILED - 14)
+    rejects negative price [10 points] (FAILED - 15)
+  #price_as_string
+    is defined
+    displays 33.95 as "$33.95" [10 points] (FAILED - 16)
+    displays 1.1 as $1.10 [10 points] (FAILED - 17)
+    displays 20 as $20.00 [10 points] (FAILED - 18)
+
+Failures:
+
+  1) Ruby intro part 1 #sum_to_n is defined
+     Failure/Error: expect { sum_to_n?([1, 2, 3], 4) }.not_to raise_error
+
+       expected no Exception, got #<NameError: undefined local variable or method `a' for #<RSpec::ExampleGroups::RubyIntroPart1::SumToN:0x0000559f677bc0a8>> with backtrace:
+         # ./lib/ruby_intro.rb:21:in `block in sum_to_n?'
+         # ./lib/ruby_intro.rb:20:in `each'
+         # ./lib/ruby_intro.rb:20:in `each_with_index'
+         # ./lib/ruby_intro.rb:20:in `sum_to_n?'
+         # ./spec/part1_spec.rb:50:in `block (4 levels) in <top (required)>'
+         # ./spec/part1_spec.rb:50:in `block (3 levels) in <top (required)>'
+     # ./spec/part1_spec.rb:50:in `block (3 levels) in <top (required)>'
+
+  2) Ruby intro part 1 #sum_to_n returns true when any two elements sum to the second argument [30 points]
+     Failure/Error:
+       arr[(a+1)..-1] do |y|
+         return true if x+y == n
+       end
+
+     NameError:
+       undefined local variable or method `a' for #<RSpec::ExampleGroups::RubyIntroPart1::SumToN:0x0000559f6737fad0>
+     # ./lib/ruby_intro.rb:21:in `block in sum_to_n?'
+     # ./lib/ruby_intro.rb:20:in `each'
+     # ./lib/ruby_intro.rb:20:in `each_with_index'
+     # ./lib/ruby_intro.rb:20:in `sum_to_n?'
+     # ./spec/part1_spec.rb:54:in `block (3 levels) in <top (required)>'
+
+  3) Ruby intro part 1 #sum_to_n returns false for any single element array [5 points]
+     Failure/Error:
+       arr[(a+1)..-1] do |y|
+         return true if x+y == n
+       end
+
+     NameError:
+       undefined local variable or method `a' for #<RSpec::ExampleGroups::RubyIntroPart1::SumToN:0x0000559f6737daa0>
+     # ./lib/ruby_intro.rb:21:in `block in sum_to_n?'
+     # ./lib/ruby_intro.rb:20:in `each'
+     # ./lib/ruby_intro.rb:20:in `each_with_index'
+     # ./lib/ruby_intro.rb:20:in `sum_to_n?'
+     # ./spec/part1_spec.rb:62:in `block (3 levels) in <top (required)>'
+
+  4) #hello The hello method returns the correct string [30 points]
+     Failure/Error: expect(hello('Dan')).to eq('Hello, Dan'), 'Incorrect results for input: "Dan"'
+       Incorrect results for input: "Dan"
+     # ./spec/part2_spec.rb:12:in `block (2 levels) in <top (required)>'
+
+  5) #starts_with_consonant? works on nonletters [5 points]
+     Failure/Error: expect(starts_with_consonant?('#foo')).to be_falsy
+
+       expected: falsey value
+            got: true
+     # ./spec/part2_spec.rb:42:in `block (2 levels) in <top (required)>'
+
+  6) #binary_multiple_of_4? is defined
+     Failure/Error: expect { binary_multiple_of_4?('yes') }.not_to raise_error # ::NoMethodError)
+
+       expected no Exception, got #<NoMethodError: undefined method `is_a' for "yes":String
+       Did you mean?  is_a?> with backtrace:
+         # ./lib/ruby_intro.rb:42:in `binary_multiple_of_4?'
+         # ./spec/part2_spec.rb:48:in `block (3 levels) in <top (required)>'
+         # ./spec/part2_spec.rb:48:in `block (2 levels) in <top (required)>'
+     # ./spec/part2_spec.rb:48:in `block (2 levels) in <top (required)>'
+
+  7) #binary_multiple_of_4? classifies valid binary numbers [30 points]
+     Failure/Error: s.is_a(Numeric) && (s % 4 == 0)
+
+     NoMethodError:
+       undefined method `is_a' for "1010101010100":String
+       Did you mean?  is_a?
+     # ./lib/ruby_intro.rb:42:in `binary_multiple_of_4?'
+     # ./spec/part2_spec.rb:53:in `block (3 levels) in <top (required)>'
+     # ./spec/part2_spec.rb:52:in `each'
+     # ./spec/part2_spec.rb:52:in `block (2 levels) in <top (required)>'
+
+  8) #binary_multiple_of_4? rejects invalid binary numbers [10 points]
+     Failure/Error: s.is_a(Numeric) && (s % 4 == 0)
+
+     NoMethodError:
+       undefined method `is_a' for "a100":String
+       Did you mean?  is_a?
+     # ./lib/ruby_intro.rb:42:in `binary_multiple_of_4?'
+     # ./spec/part2_spec.rb:61:in `block (2 levels) in <top (required)>'
+
+  9) BookInStock getters and setters sets ISBN [10 points]
+     Failure/Error: expect(@book.isbn).to eq('isbn1')
+
+     NoMethodError:
+       undefined method `isbn' for #<BookInStock:0x0000559f6764ee00 @name="isbn1", @age=33.8>
+     # ./spec/part3_spec.rb:14:in `block (3 levels) in <top (required)>'
+
+  10) BookInStock getters and setters sets price [10 points]
+      Failure/Error: expect(@book.price).to eq(33.8)
+
+      NoMethodError:
+        undefined method `price' for #<BookInStock:0x0000559f6764d438 @name="isbn1", @age=33.8>
+      # ./spec/part3_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+  11) BookInStock getters and setters is able to change ISBN [10 points]
+      Failure/Error: @book.isbn = 'isbn2'
+
+      NoMethodError:
+        undefined method `isbn=' for #<BookInStock:0x0000559f67657d70 @name="isbn1", @age=33.8>
+      # ./spec/part3_spec.rb:22:in `block (3 levels) in <top (required)>'
+
+  12) BookInStock getters and setters is able to change price [10 points]
+      Failure/Error: @book.price = 300.0
+
+      NoMethodError:
+        undefined method `price=' for #<BookInStock:0x0000559f67656c40 @name="isbn1", @age=33.8>
+      # ./spec/part3_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+  13) BookInStock constructor rejects invalid ISBN number [10 points]
+      Failure/Error: expect { BookInStock.new('', 25.00) }.to raise_error(ArgumentError)
+        expected ArgumentError but nothing was raised
+      # ./spec/part3_spec.rb:34:in `block (3 levels) in <top (required)>'
+
+  14) BookInStock constructor rejects zero price [10 points]
+      Failure/Error: expect { BookInStock.new('isbn1', 0) }.to raise_error(ArgumentError)
+        expected ArgumentError but nothing was raised
+      # ./spec/part3_spec.rb:38:in `block (3 levels) in <top (required)>'
+
+  15) BookInStock constructor rejects negative price [10 points]
+      Failure/Error: expect { BookInStock.new('isbn1', -5.0) }.to raise_error(ArgumentError)
+        expected ArgumentError but nothing was raised
+      # ./spec/part3_spec.rb:42:in `block (3 levels) in <top (required)>'
+
+  16) BookInStock #price_as_string displays 33.95 as "$33.95" [10 points]
+      Failure/Error: expect(BookInStock.new('isbn11', 33.95).price_as_string).to eq('$33.95')
+
+        expected: "$33.95"
+             got: "hello"
+
+        (compared using ==)
+      # ./spec/part3_spec.rb:52:in `block (3 levels) in <top (required)>'
+
+  17) BookInStock #price_as_string displays 1.1 as $1.10 [10 points]
+      Failure/Error: expect(BookInStock.new('isbn11', 1.1).price_as_string).to eq('$1.10')
+
+        expected: "$1.10"
+             got: "hello"
+
+        (compared using ==)
+      # ./spec/part3_spec.rb:56:in `block (3 levels) in <top (required)>'
+
+  18) BookInStock #price_as_string displays 20 as $20.00 [10 points]
+      Failure/Error: expect(BookInStock.new('isbn11', 20).price_as_string).to eq('$20.00')
+
+        expected: "$20.00"
+             got: "hello"
+
+        (compared using ==)
+      # ./spec/part3_spec.rb:60:in `block (3 levels) in <top (required)>'
+
+Finished in 0.0268 seconds (files took 0.10694 seconds to load)
+34 examples, 18 failures
+
+Failed examples:
+
+rspec ./spec/part1_spec.rb:49 # Ruby intro part 1 #sum_to_n is defined
+rspec ./spec/part1_spec.rb:53 # Ruby intro part 1 #sum_to_n returns true when any two elements sum to the second argument [30 points]
+rspec ./spec/part1_spec.rb:61 # Ruby intro part 1 #sum_to_n returns false for any single element array [5 points]
+rspec ./spec/part2_spec.rb:10 # #hello The hello method returns the correct string [30 points]
+rspec ./spec/part2_spec.rb:41 # #starts_with_consonant? works on nonletters [5 points]
+rspec ./spec/part2_spec.rb:47 # #binary_multiple_of_4? is defined
+rspec ./spec/part2_spec.rb:51 # #binary_multiple_of_4? classifies valid binary numbers [30 points]
+rspec ./spec/part2_spec.rb:60 # #binary_multiple_of_4? rejects invalid binary numbers [10 points]
+rspec ./spec/part3_spec.rb:13 # BookInStock getters and setters sets ISBN [10 points]
+rspec ./spec/part3_spec.rb:17 # BookInStock getters and setters sets price [10 points]
+rspec ./spec/part3_spec.rb:21 # BookInStock getters and setters is able to change ISBN [10 points]
+rspec ./spec/part3_spec.rb:26 # BookInStock getters and setters is able to change price [10 points]
+rspec ./spec/part3_spec.rb:33 # BookInStock constructor rejects invalid ISBN number [10 points]
+rspec ./spec/part3_spec.rb:37 # BookInStock constructor rejects zero price [10 points]
+rspec ./spec/part3_spec.rb:41 # BookInStock constructor rejects negative price [10 points]
+rspec ./spec/part3_spec.rb:51 # BookInStock #price_as_string displays 33.95 as "$33.95" [10 points]
+rspec ./spec/part3_spec.rb:55 # BookInStock #price_as_string displays 1.1 as $1.10 [10 points]
+rspec ./spec/part3_spec.rb:59 # BookInStock #price_as_string displays 20 as $20.00 [10 points]
+
